@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+}
+
+html{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-primary--color);
+    color: var(--text-primary-color);   
+}
+
+main{
+    padding: 15px;
+}
+
+main section{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.btn{
+    padding: var(--padding-sm)  var(--padding-lg);
+    border: none;
+    outline: none;
+    border-radius: var(--border-radius-md);
+    background-color: var(--bg-active-color);
+    cursor: pointer;
+    color: var(--text-active);
+}
+
+#export-btn{
+    background-color: var(--bg-success-color);
+    color: var(--text-primary-color);
+}
+
+main section .left{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--gutter-md);
+    width: 70%;
+}
+
+main section .right{
+    width: 30%;
+    background-color: var(--bg-secondary-color);
+    padding: var(--padding-lg);
+    border-radius: var(--border-radius-lg);
+}
+
+main section .top{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+}
+.right {
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+main section .bottom{
+    background-color: var(--bg-secondary-color);
+    width: 100%;
+    padding: var(--padding-2xl);
+    aspect-ratio: 5/3;
+    border-radius: var(--border-radius-xl);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main section .bottom .placeholder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.6;
+    gap: var(--gutter-md);
+}
+
+
+main section .bottom .placeholder i{
+    font-size: 10rem;
+}
+
+main section .bottom .placeholder p{
+    font-size: var(--font-lg);
+}
+
+
+.left{
+    flex: 2;
+}
+
+.right{
+    flex: 1;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+
+main section .right{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-md);
+}
+
+main section .right .filters{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-md);
+}
+
+
+main section .right .filter{
+    width: 100%;
+}
+
+main section .right .filter input{
+    width: 100%;
+    outline: none;
+    margin: var(--margin-sm);
+    appearance: none;
+}
+
+
+main section .right .filter input::-webkit-slider-runnable-track {
+    background-color: var(--bg-active-color);
+    height: 3px;
+    border-radius: 2px;
+}
+
+main section .right .filter input::-webkit-slider-thumb {
+    cursor: pointer;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    margin-top: -8.5px;
+}
+
+canvas{
+    background-color: whitesmoke;
+     display: none;
+    max-width: 100%;
+    max-height: 80vh;
+   
+}
+
+#image-canvas {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.filter {
+  margin-bottom: 14px;
+}
+
+.filter input {
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn {
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+.right {
+  background: #111;
+  color: white;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.btn {
+  background: linear-gradient(135deg, #ff6a00, #ff2e63);
+  border: none;
+  padding: 10px 16px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.filter input {
+  accent-color: #ff2e63;
+}
+
+
+
+
+
+
+
+
+
+/* ========================= */
+/* MOBILE RESPONSIVE DESIGN */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  section {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .top {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .btn {
+    flex: 1 1 45%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .filters {
+    padding: 10px 0;
+  }
+
+  .filter input {
+    height: 30px; /* Bigger for touch */
+  }
+
+  .right {
+    max-height: none;
+  }
+}
+
+
+input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+}
+
